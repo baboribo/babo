@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
 
   let nowPlaying = $state<any>(null);
+  const pfView = false; // 프로필 정보 관련 변수
 
   async function getNowPlaying() {
     const res = await fetch('/api/now-playing');
@@ -34,11 +35,13 @@
   });
 </script>
 
-<div class="main-container">
-    <img class="avatar" src="https://avatars.githubusercontent.com/u/71020988?v=4" alt="?" />
-    <h2>바보리보</h2>
-    <p class="txt-secondary">여러가지 시도를 좋아해요.</p>
-</div>
+{#if pfView}
+  <div class="main-container">
+      <img class="avatar" src="https://avatars.githubusercontent.com/u/71020988?v=4" alt="?" />
+      <h2>바보리보</h2>
+      <p class="txt-secondary">여러가지 시도를 좋아해요.</p>
+  </div>
+{/if}
 
 <h2>현재 듣는 곡</h2>
 {#if nowPlaying}
