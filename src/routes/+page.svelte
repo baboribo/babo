@@ -37,7 +37,7 @@
 <div class="main-container">
     <img class="avatar" src="https://avatars.githubusercontent.com/u/71020988?v=4" alt="?" />
     <h2>바보리보</h2>
-    <p>여러가지 시도를 좋아해요.</p>
+    <p class="txt-secondary">여러가지 시도를 좋아해요.</p>
 </div>
 
 <h2>현재 듣는 곡</h2>
@@ -46,15 +46,14 @@
     <div>
       <img 
         src={nowPlaying.item.album.images[0].url} 
-        alt="Album Art" 
-        width="80" 
-        style="border-radius: 4px;"
+        alt={nowPlaying.item.name} 
+        width="80"
       />
       <div>
-        <strong>{nowPlaying.item.name}</strong>
+        <h4>{nowPlaying.item.name}</h4>
         
-        <p>
-          {nowPlaying.item.artists.map((a) => a.name).join(', ')}
+        <p class="txt-secondary">
+          {nowPlaying.item.artists.map((a: any) => a.name).join(', ')}
         </p>
         <div class="progress-bg">
         <div 
@@ -63,14 +62,13 @@
         ></div>
         </div>
         
-        <span>
+        <span class="txt-secondary-sub">
             {Math.floor(nowPlaying.progress_ms / 1000 / 60)}:{String(Math.floor((nowPlaying.progress_ms / 1000) % 60)).padStart(2, '0')} 
             / 
             {Math.floor(nowPlaying.item.duration_ms / 1000 / 60)}:{String(Math.floor((nowPlaying.item.duration_ms / 1000) % 60)).padStart(2, '0')}
         </span>
 
-        <span>Spotify에서 듣는 중</span>
-        <p>{nowPlaying.item.album.external_urls}</p>
+        <span class="txt-secondary-sub">Spotify에서 듣는 중</span>
       </div>
     </div>
   {:else}
@@ -79,11 +77,3 @@
 {:else}
   <p>데이터 불러오는 중...</p>
 {/if}
-
-<style>
-  .progress-bg { width: 100%; height: 6px; background: #333; border-radius: 3px; margin: 10px 0; }
-  .progress-bar { 
-    height: 100%; background: #1DB954; border-radius: 3px; 
-    transition: width 0.2s linear;
-  }
-</style>
