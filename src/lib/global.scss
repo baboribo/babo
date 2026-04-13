@@ -2,12 +2,17 @@
 
 body {
     background-color: v.$bg-canvas;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
 }
 
 //// 레이아웃
 .main-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 4px;
 }
 
@@ -17,6 +22,7 @@ body {
     gap: 14px;
     align-items: top;
     padding: 8px 14px;
+    max-width: 520px;
 }
 
 .now-playing-cover {
