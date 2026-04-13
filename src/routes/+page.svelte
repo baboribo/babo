@@ -45,7 +45,7 @@
 {/if}
 
 <div class="main-container">
-    <h3 style="padding: 8px 13px;">현재 듣는 곡</h3>
+    <!-- <h3 style="padding: 8px 13px;">현재 듣는 곡</h3> -->
     {#if nowPlaying}
         {#if nowPlaying.is_playing}
             <div class="now-playing-container">
