@@ -8,7 +8,7 @@
   async function getNowPlaying() {
     const res = await fetch('/api/now-playing');
     const data = await res.json();
-    console.log("받아온 곡 데이터:", data); // Spotify API에서 받아온 json을 콘솔에 뿌려줌.
+    // console.log("받아온 곡 데이터:", data); // Spotify API에서 받아온 json을 콘솔에 뿌려줌.
     nowPlaying = data;
   }
 
