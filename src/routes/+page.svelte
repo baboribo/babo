@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { SiSpotify } from "@icons-pack/svelte-simple-icons";
 
   let nowPlaying = $state<any>(null);
   const pfView = false; // 프로필 정보 관련 변수
@@ -7,7 +8,7 @@
   async function getNowPlaying() {
     const res = await fetch('/api/now-playing');
     const data = await res.json();
-    // console.log("받아온 노래 데이터:", data); // Spotify API에서 받아온 json을 콘솔에 뿌려줌.
+    console.log("받아온 곡 데이터:", data); // Spotify API에서 받아온 json을 콘솔에 뿌려줌.
     nowPlaying = data;
   }
 
@@ -43,7 +44,7 @@
     </div>
 {/if}
 
-<h3 style="padding: 8px 13px;">현재 듣는 곡</h3>
+<!-- <h3 style="padding: 8px 13px;">현재 듣는 곡</h3> -->
 {#if nowPlaying}
     {#if nowPlaying.is_playing}
         <div class="now-playing-container">
@@ -73,6 +74,11 @@
                         <span class="txt-secondary-sub">
                             {Math.floor(nowPlaying.progress_ms / 1000 / 60)}:{String(Math.floor((nowPlaying.progress_ms / 1000) % 60)).padStart(2, '0')} 
                         </span>
+                        <SiSpotify class="si-s" />
+                        <!-- <div style="display: flex; flex-direction: row; gap: 6px;">
+                            <SiSpotify class="si-s" />
+                            <span class="txt-primary-sub">Spotify에서 듣는 중</span>
+                        </div> -->
                         <span class="txt-secondary-sub">
                             {Math.floor(nowPlaying.item.duration_ms / 1000 / 60)}:{String(Math.floor((nowPlaying.item.duration_ms / 1000) % 60)).padStart(2, '0')} 
                         </span>
@@ -82,7 +88,7 @@
             </div>
         </div>
     {:else}
-    <p>지금은 노래를 듣고 있지 않아요.</p>
+    <p class="txt-secondary-sub">지금은 노래를 듣고 있지 않아요.</p>
 {/if}
 {:else}
   <p>데이터 불러오는 중...</p>

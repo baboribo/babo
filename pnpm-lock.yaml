@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@icons-pack/svelte-simple-icons':
+        specifier: ^7.2.0
+        version: 7.2.0(@sveltejs/kit@2.57.0(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.2)(vite@8.0.8(@types/node@25.6.0)(sass@1.99.0)))(svelte@5.55.2)(typescript@6.0.2)(vite@8.0.8(@types/node@25.6.0)(sass@1.99.0)))(svelte@5.55.2)
       buffer:
         specifier: ^6.0.3
         version: 6.0.3
@@ -50,6 +53,13 @@ packages:
 
   '@emnapi/wasi-threads@1.2.1':
     resolution: {integrity: sha512-uTII7OYF+/Mes/MrcIOYp5yOtSMLBWSIoLPpcgwipoiKbli6k322tcoFsxoIIxPDqW01SQGAgko4EzZi2BNv2w==}
+
+  '@icons-pack/svelte-simple-icons@7.2.0':
+    resolution: {integrity: sha512-zH4YByltlMBipdijJ1ZN4YGmxn2LKLCt+wCDC1rF0+3yor95Df090lZ5wfsN/UN4JsLjr7e6nxp6MOsEfYv/cQ==}
+    engines: {node: '>=24', pnpm: '>=10'}
+    peerDependencies:
+      '@sveltejs/kit': ^2.5.0
+      svelte: ^5.0.0
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -644,6 +654,11 @@ snapshots:
     dependencies:
       tslib: 2.8.1
     optional: true
+
+  '@icons-pack/svelte-simple-icons@7.2.0(@sveltejs/kit@2.57.0(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.2)(vite@8.0.8(@types/node@25.6.0)(sass@1.99.0)))(svelte@5.55.2)(typescript@6.0.2)(vite@8.0.8(@types/node@25.6.0)(sass@1.99.0)))(svelte@5.55.2)':
+    dependencies:
+      '@sveltejs/kit': 2.57.0(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.2)(vite@8.0.8(@types/node@25.6.0)(sass@1.99.0)))(svelte@5.55.2)(typescript@6.0.2)(vite@8.0.8(@types/node@25.6.0)(sass@1.99.0))
+      svelte: 5.55.2
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:

@@ -65,6 +65,20 @@ body {
     height: 100%; background: v.$brd-strong; border-radius: 3px; 
 }
 
+
+//// 아이콘
+.si-m {
+    width: 24px;
+    height: 24px;
+    color: v.$icon-secondary;
+}
+
+.si-s {
+    width: 18px;
+    height: 18px;
+    color: v.$icon-secondary;
+}
+
 //// 폰트
 /*
 Copyright (c) 2021 Kil Hyung-jin, with Reserved Font Name Pretendard JP.
