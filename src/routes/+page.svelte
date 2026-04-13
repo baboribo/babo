@@ -53,7 +53,7 @@
         width="80"
       />
       <div>
-        <h4>{nowPlaying.item.name}</h4>
+        <h4><a href={nowPlaying.item.album.external_urls.spotify} target="_blank" rel="noopener noreferrer nofollow">{nowPlaying.item.name}</a></h4>
         
         <p class="txt-secondary">
           {nowPlaying.item.artists.map((a: any) => a.name).join(', ')}
