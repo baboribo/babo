@@ -3,7 +3,7 @@
   import { SiSpotify } from "@icons-pack/svelte-simple-icons";
 
   let nowPlaying = $state<any>(null);
-  const pfView = false; // 프로필 정보 관련 변수
+  const pfView = true; // 프로필 정보 관련 변수
 
   async function getNowPlaying() {
     const res = await fetch('/api/now-playing');
@@ -38,9 +38,7 @@
 
 {#if pfView}
     <div>
-          <img class="avatar" src="https://avatars.githubusercontent.com/u/71020988?v=4" alt="?" />
-          <h2>y^7x</h2>
-          <p class="txt-secondary">설명</p>
+        <img class="avatar" src="https://avatars.githubusercontent.com/u/71020988" alt="?" />
     </div>
 {/if}
 
@@ -50,9 +48,9 @@
         {#if nowPlaying.is_playing}
             <div class="now-playing-container">
                 <img 
-                src={nowPlaying.item.album.images[0].url} 
-                alt={nowPlaying.item.name} 
-                class="now-playing-cover"
+                    src={nowPlaying.item.album.images[0].url} 
+                    alt={nowPlaying.item.name} 
+                    class="now-playing-cover"
                 />
                 <div class="now-playing-info">
                     <div class="now-playing-txts">
